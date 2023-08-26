@@ -1,3 +1,7 @@
+let w = 0;
+let l = 0;
+let d = 0;
+
 function game(){
 
     //Loop the code 5 times to play 5 rounds total
@@ -47,18 +51,25 @@ function game(){
     function playRound(playerChoice, computerChoice) {
         if (playerChoice === "rock" && computerChoice === "paper") {
             alert("You lose! Paper beats rock");
+            l++;
         } else if (playerChoice === "rock" && computerChoice === "scissors") {
             alert("You win! Rock beats scissors");
+            w++;
         } else if (playerChoice === "paper" && computerChoice === "rock") {
             alert("You win! Paper beats rock");
+            w++;
         } else if (playerChoice === "paper" && computerChoice === "scissors") {
             alert("You lose! Scissors beats paper");
+            l++;
         } else if (playerChoice === "scissors" && computerChoice === "rock") {
             alert("You lose! Rock beats scissors");
+            l++;
         } else if (playerChoice === "scissors" && computerChoice === "paper") {
             alert("You win! Scissors beats paper");
+            w++;
         } else {
             alert("It's a draw!");
+            d++;
         }
     }
     playRound(playerChoice, computerChoice);
@@ -66,3 +77,5 @@ function game(){
 }
 
 game();
+
+alert("You won " + w + " game(s), lost " + l + " game(s), and tied " + d + " game(s)!");
