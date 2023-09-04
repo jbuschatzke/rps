@@ -14,30 +14,41 @@ function getComputerChoice () {
 }
 
 function playRound(playerChoice, computerChoice) {
+   const buttons = document.querySelectorAll("button"); 
    const displayResults = document.querySelector('#results');
+   const displayWinner = document.querySelector('.message');
     if (playerChoice === "rock" && computerChoice === "paper") {
-        alert("You lose! Paper beats rock");
+        displayWinner.textContent = "You lose! Paper beats rock";
         l++;
     } else if (playerChoice === "rock" && computerChoice === "scissors") {
-        alert("You win! Rock beats scissors");
+        displayWinner.textContent ="You win this round! Rock beats scissors";
         w++;
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-        alert("You win! Paper beats rock");
+        displayWinner.textContent ="You win this round! Paper beats rock";
         w++;
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-        alert("You lose! Scissors beats paper");
+        displayWinner.textContent ="You lose this round! Scissors beats paper";
         l++;
     } else if (playerChoice === "scissors" && computerChoice === "rock") {
-        alert("You lose! Rock beats scissors");
+        displayWinner.textContent ="You lose this round! Rock beats scissors";
         l++;
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-        alert("You win! Scissors beats paper");
+        displayWinner.textContent ="You win this round! Scissors beats paper";
         w++;
     } else {
-        alert("It's a draw!");
+        displayWinner.textContent = "It's a draw!";
         d++;
     }
-    displayResults.textContent = "You have won " + w + " games, you have lost " + l + " games, and there have been " + d + " draws."
+
+    if (w < 5 && l < 5){
+    displayResults.textContent = "You have won " + w + " games, you have lost " + l + " games, and there have been " + d + " draws.";
+    } else if (w == 5 && l < 5) {
+        displayWinner.textContent = "You won the game!";
+        displayResults.textContent = "Congratulations!";
+    } else {
+        displayWinner.textContent = "You lost the game!";
+        displayResults.textContent = "See you in hell!";
+    }
 }
 
 
