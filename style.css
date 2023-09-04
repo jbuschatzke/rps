@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #607593; 
+}
+
+button{
+    margin: 0;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 10%;
+    background-color: #b0a47c;
+    color: #455a5e;
+}
+
+.box{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: auto;
+}
+
+#results{
+    font-size: 32px;
+    margin-top: 32px;
+    color: #e0cca6;
+}
+
+/* 
+#results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

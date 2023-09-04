@@ -14,6 +14,7 @@ function getComputerChoice () {
 }
 
 function playRound(playerChoice, computerChoice) {
+   const displayResults = document.querySelector('#results');
     if (playerChoice === "rock" && computerChoice === "paper") {
         alert("You lose! Paper beats rock");
         l++;
@@ -36,6 +37,7 @@ function playRound(playerChoice, computerChoice) {
         alert("It's a draw!");
         d++;
     }
+    displayResults.textContent = "You have won " + w + " games, you have lost " + l + " games, and there have been " + d + " draws."
 }
 
 
